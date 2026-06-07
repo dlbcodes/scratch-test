@@ -8,7 +8,7 @@ import {
     Badge,
     Button,
     Kbd,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import { PhCaretUpDown, PhCheck, PhPlus, PhGear } from "@phosphor-icons/vue";
 
 interface Workspace {
@@ -55,7 +55,7 @@ const planVariant = (plan: Workspace["plan"]): string => {
         <Popover placement="bottom-start">
             <PopoverTrigger>
                 <div
-                    class="flex items-center w-64 justify-between bg-bg-raised p-2 border border-border-subtle rounded-xl transition-colors hover:border-border-strong"
+                    class="flex items-center w-64 justify-between bg-bg-raised p-4 border border-border-subtle rounded-2xl transition-colors hover:border-border-strong"
                 >
                     <span class="flex items-center gap-3 min-w-0">
                         <Avatar

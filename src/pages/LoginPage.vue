@@ -10,7 +10,7 @@ import {
     Checkbox,
     Label,
     Button,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import { PhGoogleLogo, PhGithubLogo } from "@phosphor-icons/vue";
 
 const email = ref("");

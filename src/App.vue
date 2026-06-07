@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import { Button } from "my-design-system";
+import { Button } from "@dlbcodes/my-design-system";
 import { PhArrowLeft } from "@phosphor-icons/vue";
 import { pages } from "./registry";
 

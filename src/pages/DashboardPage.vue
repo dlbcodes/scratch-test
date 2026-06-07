@@ -7,7 +7,7 @@ import {
     Badge,
     Button,
     Avatar,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import { PhTrendUp, PhTrendDown, PhArrowRight } from "@phosphor-icons/vue";
 
 const stats = [

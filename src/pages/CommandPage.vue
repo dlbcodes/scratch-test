@@ -8,7 +8,7 @@ import {
     Kbd,
     Spinner,
     Button,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import { PhMagnifyingGlass } from "@phosphor-icons/vue";
 
 const open = ref(false);

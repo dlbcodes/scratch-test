@@ -9,7 +9,7 @@ import {
     Checkbox,
     Label,
     Input,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import { PhFunnel, PhCalendar, PhTag } from "@phosphor-icons/vue";
 
 const statuses = ["Active", "Pending", "Archived"];

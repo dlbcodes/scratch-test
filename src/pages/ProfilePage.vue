@@ -17,7 +17,7 @@ import {
     MultiSelectContent,
     MultiSelectItem,
     Button,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 
 const name = ref("Daniel Lobo");
 const bio = ref("Frontend engineer who likes design systems.");

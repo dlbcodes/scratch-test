@@ -17,7 +17,7 @@ import {
     SelectContent,
     SelectItem,
     Button,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 
 const name = ref("Daniel Lobo");
 const email = ref("daniel@example.com");

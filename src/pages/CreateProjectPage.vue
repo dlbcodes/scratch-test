@@ -17,7 +17,7 @@ import {
     Checkbox,
     Label,
     Button,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 
 const name = ref("");
 const slug = ref("");

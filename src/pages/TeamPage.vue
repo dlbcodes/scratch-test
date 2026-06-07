@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import {
+    Panel,
+    PanelContent,
     Avatar,
     Badge,
     Button,
@@ -19,7 +21,7 @@ import {
     MultiSelectTrigger,
     MultiSelectContent,
     MultiSelectItem,
-} from "my-design-system";
+} from "@dlbcodes/my-design-system";
 import {
     PhPencilSimple,
     PhUserGear,
@@ -109,61 +111,67 @@ const teamOptions = [
         </div>
 
         <!-- Members list (hand-built rows + tokens; no Table component) -->
-        <div class="rounded-2xl border border-border-subtle bg-bg-raised">
-            <div
-                v-for="member in members"
-                :key="member.id"
-                class="flex items-center gap-4 border-b border-border-subtle px-4 py-3 last:border-b-0"
-            >
-                <Avatar :name="member.name" :src="member.src" />
-                <div class="min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-text-primary">
-                        {{ member.name }}
-                    </p>
-                    <p class="truncate text-sm text-text-secondary">
-                        {{ member.email }}
-                    </p>
-                </div>
-
-                <Badge
-                    :variant="member.role === 'Admin' ? 'primary' : 'neutral'"
+        <Panel class="overflow-visible">
+            <PanelContent class="overflow-visible">
+                <div
+                    v-for="member in members"
+                    :key="member.id"
+                    class="flex items-center gap-4 border-b border-border-subtle px-4 py-4 last:border-b-0"
                 >
-                    {{ member.role }}
-                </Badge>
-                <Badge
-                    :variant="
-                        member.status === 'Active' ? 'success' : 'pending'
-                    "
-                >
-                    {{ member.status }}
-                </Badge>
-
-                <Dropdown placement="bottom-end">
-                    <DropdownTrigger>
-                        <Button
-                            variant="ghost"
-                            size="icon-sm"
-                            aria-label="Member actions"
-                            >⋯</Button
+                    <Avatar :name="member.name" :src="member.src" />
+                    <div class="min-w-0 flex-1">
+                        <p
+                            class="truncate text-sm font-medium text-text-primary"
                         >
-                    </DropdownTrigger>
-                    <DropdownContent size="xs">
-                        <DropdownItem>
-                            <PhPencilSimple class="size-4" />
-                            Edit
-                        </DropdownItem>
-                        <DropdownItem>
-                            <PhUserGear class="size-4" />
-                            Change role
-                        </DropdownItem>
-                        <DropdownItem @select="askRemove(member)">
-                            <PhTrash class="size-4" />
-                            Remove
-                        </DropdownItem>
-                    </DropdownContent>
-                </Dropdown>
-            </div>
-        </div>
+                            {{ member.name }}
+                        </p>
+                        <p class="truncate text-sm text-text-secondary">
+                            {{ member.email }}
+                        </p>
+                    </div>
+
+                    <Badge
+                        :variant="
+                            member.role === 'Admin' ? 'primary' : 'neutral'
+                        "
+                    >
+                        {{ member.role }}
+                    </Badge>
+                    <Badge
+                        :variant="
+                            member.status === 'Active' ? 'success' : 'pending'
+                        "
+                    >
+                        {{ member.status }}
+                    </Badge>
+
+                    <Dropdown placement="bottom-end">
+                        <DropdownTrigger>
+                            <Button
+                                variant="ghost"
+                                size="icon-sm"
+                                aria-label="Member actions"
+                                >⋯</Button
+                            >
+                        </DropdownTrigger>
+                        <DropdownContent size="xs">
+                            <DropdownItem>
+                                <PhPencilSimple class="size-4" />
+                                Edit
+                            </DropdownItem>
+                            <DropdownItem>
+                                <PhUserGear class="size-4" />
+                                Change role
+                            </DropdownItem>
+                            <DropdownItem @select="askRemove(member)">
+                                <PhTrash class="size-4" />
+                                Remove
+                            </DropdownItem>
+                        </DropdownContent>
+                    </Dropdown>
+                </div>
+            </PanelContent>
+        </Panel>
 
         <!-- Remove confirmation -->
         <Modal v-model="removeOpen" size="sm">

@@ -68,4 +68,16 @@ export const pages: PageEntry[] = [
 		description: "A team switcher popover with avatars, plan badges, and key hints.",
 		page: () => import("./pages/WorkspacePage.vue")
 	},
+	{
+		slug: "faq",
+		name: "FAQ",
+		description: "Help page with Tabs for categories and Disclosure for each question.",
+		page: () => import("./pages/FaqPage.vue"),
+	},
+	{
+		slug: "account",
+		name: "Account",
+		description: "Tabbed account settings with a Disclosure for advanced options.",
+		page: () => import("./pages/AccountPage.vue"),
+	},
 ];
