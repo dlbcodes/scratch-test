@@ -6,7 +6,6 @@ import {
     PopoverContent,
     Avatar,
     Badge,
-    Button,
     Kbd,
 } from "@dlbcodes/my-design-system";
 import { PhCaretUpDown, PhCheck, PhPlus, PhGear } from "@phosphor-icons/vue";
@@ -33,7 +32,9 @@ const select = (ws: Workspace, close: () => void): void => {
     close();
 };
 
-const planVariant = (plan: Workspace["plan"]): string => {
+const planVariant = (
+    plan: Workspace["plan"],
+): "primary" | "success" | "neutral" => {
     if (plan === "Enterprise") return "primary";
     if (plan === "Pro") return "success";
     return "neutral";

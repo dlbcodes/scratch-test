@@ -3,7 +3,6 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { Button } from "@dlbcodes/my-design-system";
 import { PhArrowLeft } from "@phosphor-icons/vue";
-import { pages } from "./registry";
 
 const route = useRoute();
 const isHome = computed(() => route.path === "/");

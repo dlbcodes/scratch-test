@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import {
-    Panel,
-    PanelContent,
     Tabs,
     TabsList,
     TabsTrigger,
