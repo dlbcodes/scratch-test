@@ -80,4 +80,10 @@ export const pages: PageEntry[] = [
 		description: "Tabbed account settings with a Disclosure for advanced options.",
 		page: () => import("./pages/AccountPage.vue"),
 	},
+	{
+		slug: "sidebar",
+		name: "Sidebar",
+		description: "A responsive dashboard shell with a sidebar and mobile drawer.",
+		page: () => import("./pages/SidebarPage.vue"),
+	},
 ];

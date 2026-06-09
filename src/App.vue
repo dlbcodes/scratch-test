@@ -6,16 +6,19 @@ import { PhArrowLeft } from "@phosphor-icons/vue";
 
 const route = useRoute();
 const isHome = computed(() => route.path === "/");
+const isFullscreen = computed(() => route.meta.fullscreen === true);
 </script>
 
 <template>
-    <div class="flex min-h-screen flex-col bg-bg-base">
-        <!-- Page content -->
+    <!-- Fullscreen routes (e.g. the dashboard demo): no app chrome -->
+    <router-view v-if="isFullscreen" />
+
+    <!-- Normal layout: centered content + back-to-home footer -->
+    <div v-else class="flex min-h-screen flex-col bg-bg-base">
         <main class="mx-auto w-full max-w-3xl flex-1 p-6">
             <router-view />
         </main>
 
-        <!-- Bottom bar: back to home (hidden on the home page itself) -->
         <footer
             v-if="!isHome"
             class="sticky bottom-0 border-t border-border-subtle bg-bg-raised/80 px-6 py-3 backdrop-blur"
